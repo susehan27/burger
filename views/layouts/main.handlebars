@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Burger Time</title>
 </head>
 
 <body>
+    <div class="container">
 
-    {{{ body }}}
-    
+        <div class="row">
+            <img src="/assets/img/burger.png">
+            <h2>Eat The Burger!</h2>
+        </div>
+
+        <br>
+
+        {{{body}}}
+
+        <br>
+
+        <form class="create" method="POST">
+            <div class="form-group">
+                <label>Enter a burger you want to eat!</label>
+                <textarea class="form-control" id="newBurger" name="burger_name"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Place Order</button>
+        </form>
+
+    </div>
+
 </body>
 </html>

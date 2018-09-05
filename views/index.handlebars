@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-6">
+        <h3>Your Burger Orders</h3>
+        <div id="burgers">
+            <ul>
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <li>
+                        {{this.id}}
+                        {{this.burger_name}}
+                    
+                        <form action="/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button class="btn btn-light" type="submit">Devour It!</button>
+                        </form>
+
+                    </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>    
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h3>Devoured!!</h3>
+            {{#each burgers}}
+                {{#if this.devoured}}
+                <div class="input-group">
+                    <li>
+                        {{this.id}}
+                        {{this.burger_name}}
+                    </li>
+                </div>
+                {{/if}}
+            {{/each}}
+    </div>
+</div>
